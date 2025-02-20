@@ -6,5 +6,6 @@
     ./starship
     ./wezterm
     ./zsh
+    ./fastfetch
   ];
 }

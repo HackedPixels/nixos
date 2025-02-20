@@ -41,9 +41,9 @@
 	  config.allowUnfree = true;
 	});
     buildHomeManagerConfig =
-      hostname:
+      hostname: username:
       let	
-	rootPath = "/Users/jan/nixos/modules/home-manager";
+	rootPath = "/Users/${username}/nixos/modules/home-manager";
         hostPath = "${rootPath}/hosts/${hostname}";
         sharedPath = "${rootPath}/shared";
       in {
@@ -73,7 +73,7 @@
 	      home-manager.useUserPackages = true;
 	      home-manager.users."${username}" = homeManagerModules;
 	      home-manager.extraSpecialArgs = specialArgs // {
-	        homeManagerConfig = buildHomeManagerConfig hostname;
+	        homeManagerConfig = buildHomeManagerConfig hostname username;
 	      };
 	    }
             nix-homebrew.darwinModules.nix-homebrew
@@ -96,6 +96,7 @@
 
     darwinConfigurations = {
       "Jans-M1Book-Pro" = createDarwin "Jans-M1Book-Pro" "jan" "Jan Koeppen" "jan@koeppen.name";
+      "SIT-SMBP-D7130T" = createDarwin "SIT-SMBP-D7130T" "koeppenja" "Jan Koeppen" "jan.koeppen1@mail.schwarz";
     };
     darwinPackages = self.darwinConfigurations.${outputs.networking.hostName}.pkgs;
   };
