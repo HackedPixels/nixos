@@ -12,7 +12,6 @@ system: hostname: username: fullname: email: {
 
   # networking
   # wireguardInterface = "wg0";
-
   # hosts
 
   # domains

@@ -23,10 +23,10 @@
 
   outputs = {
     self, nixpkgs, nixpkgs-stable, nix-darwin, home-manager, nix-homebrew, ...
-  }@inputs: 
+  }@inputs:
   let
     inherit (self) outputs;
-    
+
     forAllSystems = nixpkgs.lib.genAttrs [
       "aarch64-darwin"
     ];
@@ -42,8 +42,8 @@
 	});
     buildHomeManagerConfig =
       hostname: username:
-      let	
-	rootPath = "/Users/${username}/nixos/modules/home-manager";
+      let
+	      rootPath = "/Users/${username}/nixos/modules/home-manager";
         hostPath = "${rootPath}/hosts/${hostname}";
         sharedPath = "${rootPath}/shared";
       in {

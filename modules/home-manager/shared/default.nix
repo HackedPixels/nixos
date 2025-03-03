@@ -7,5 +7,7 @@
     ./wezterm
     ./zsh
     ./fastfetch
+    ./direnv
+    ./zed
   ];
 }
