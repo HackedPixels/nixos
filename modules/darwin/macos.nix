@@ -1,6 +1,6 @@
 { vars, config, lib, pkgs, ... }:
 {
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # link applications so they show up in Launmch
   system.activationScripts.postUserActivation.text = ''
@@ -13,6 +13,7 @@
 
       # Following line should allow us to avoid a logout/login cycle when changing settings
       /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      killall SystemUIServer
     '';
 
   system = {
@@ -23,17 +24,20 @@
           "MenuItemHidden" = 1;
         };
         "com.apple.symbolichotkeys" = {
-            AppleSymbolicHotKeys = {
-              # Disable 'Cmd + Space' for Spotlight Search
-              "64" = {
-                enabled = false;
-              };
-              # Disable 'Cmd + Alt + Space' for Finder search window
-              "65" = {
-                enabled = false;
-              };
+          AppleSymbolicHotKeys = {
+            # Disable 'Cmd + Space' for Spotlight Search
+            "64" = {
+              enabled = false;
+            };
+            # Disable 'Cmd + Alt + Space' for Finder search window
+            "65" = {
+              enabled = false;
             };
           };
+        };
+        "com.apple.spaces" = {
+          "spans-displays" = false;
+        };
       };
 
       dock = {

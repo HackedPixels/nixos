@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    sketchybar
     sketchybar-app-font
 
     jq
+    fd
+    ripgrep
   ];
 }

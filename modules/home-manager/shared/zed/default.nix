@@ -39,8 +39,8 @@
       };
       theme = {
         mode = "system";
-        light = "Solarized Light";
-        dark = "Catppuccin Mocha (Blue Blur+)";
+        light = "One Light";
+        dark = "One Dark";
       };
       lsp = {
         yaml-language-server = {

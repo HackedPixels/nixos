@@ -2,12 +2,14 @@
 
 {
   imports = [
+    ./aerospace
+    ./borders
+    ./direnv
     ./eza
+    ./fastfetch
     ./starship
     ./wezterm
     ./zsh
-    ./fastfetch
-    ./direnv
     ./zed
   ];
 }

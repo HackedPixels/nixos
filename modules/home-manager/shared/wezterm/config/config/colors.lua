@@ -11,7 +11,7 @@ local function scheme_for_appearance(appearance)
   if appearance:find('Dark') then
     return 'Catppuccin Mocha';
   else
-    return 'Github (Gogh)';
+    return 'Papercolor Light (Gogh)';
   end
 end
 
